@@ -6,7 +6,8 @@ import ProductCard from "./product-card";
 type Props = { products: Product[]; title: string };
 
 const ProductList = ({ products,title }: Props) => {
-  return <div className="space-y-4">
+  
+  return <div className="space-y-4" >
     
     <h2 className="font-bold text-3xl">{title}</h2>
     {!products.length && <NoResults />}

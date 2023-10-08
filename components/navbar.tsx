@@ -14,7 +14,7 @@ const Navbar =async (props: Props) => {
 
   const categories = await getCategories()
   return (
-    <nav className='border-b h-16 flex items-center  px-2 sm:px-4 md:px-16 lg:px-20'>
+    <nav className='border-b h-16 flex items-center  myPadding'>
 
       <Link className='text-3xl font-medium' href={'/'}>Awesome</Link>
       <MainNav data={categories} />

@@ -7,3 +7,17 @@ body,
 :root{
   height: 100%;
 }
+
+.myPadding{
+  @apply px-6 md:px-8 lg:px-12
+}
+
+
+.myScroll::-webkit-scrollbar {
+@apply h-2 hidden
+}
+
+.myScroll::-webkit-scrollbar-thumb{
+  @apply bg-black
+}
+
