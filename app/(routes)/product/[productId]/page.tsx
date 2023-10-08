@@ -1,6 +1,7 @@
 import getProduct from '@/actions/get-product'
 import getProducts from '@/actions/get-products'
 import Gallary from '@/components/gallary'
+import Info from '@/components/info'
 import RelatedProducts from '@/components/related-products'
 import React from 'react'
 
@@ -19,7 +20,7 @@ const filteredRelatedProducts = relatedProducts.filter((product)=>product.id !==
     <div className='space-y-6'>
         <div className='lg:grid lg:grid-cols-2 lg:gap-6 myPadding mt-5'>
             <Gallary images={product.images} />
-            <div>Info</div>
+            <Info product={product} />
         </div>
 
         <hr className='my-8 border-t  ' />
