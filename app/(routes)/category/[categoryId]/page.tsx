@@ -34,8 +34,8 @@ const page = async ({ params, searchParams }: Props) => {
         </div>
        
         <div className="space-y-8 hidden lg:block">
-          <Filter name="Sizes" keyValue="sizeId" data={sizes} />
-          <Filter name="Colors" keyValue="colorId" data={colors} />
+          <Filter  name="Sizes" keyValue="sizeId" data={sizes} />
+          <Filter  name="Colors" keyValue="colorId" data={colors} />
         </div>
         <div className="lg:col-span-4">
           {!filteredProducts.length && <NoResults />}

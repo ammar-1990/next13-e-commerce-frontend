@@ -20,15 +20,15 @@ const Modal = ({onClose,open,children}: Props) => {
        <div className='inset-0 fixed overflow-y-auto'>
         <div className='flex items-center justify-center min-h-full text-center'>
         <Transition.Child
-        enter="transition-opacity ease-out duration-300"
+        enter="transition ease-out duration-300"
         enterFrom="opacity-0 scale-95"
         enterTo="opacity-100"
-        leave="transition-opacity ease-in duration-300"
+        leave="transition ease-in duration-300"
         leaveFrom="opacity-100 scale-100"
         leaveTo="opacity-0 scale-95"
       >
     <Dialog.Panel className={'max-w-3xl w-full overflow-hidden rounded-lg text-left align-middle'}>
-                  <div className='flex items-center shadow-2xl w-full overflow-hidden bg-white px-4 pb-8 pt-14 '>
+                  <div className='flex relative items-center shadow-2xl w-full overflow-hidden bg-white px-4 pb-8 pt-14 '>
                     <div className='absolute top-4 right-4'>
                       <IconButton onClick={onClose} icon={<XIcon size={15} />} />
 

@@ -5,12 +5,14 @@ import React from 'react'
 import Currency from './currency-product'
 import Button from './button'
 import {ShoppingBasket} from 'lucide-react'
+import useCart from '@/hooks/use-cartl'
 
 type Props = {
     product:Product
 }
 
 const Info = ({product}: Props) => {
+    const {addItem} = useCart()
   return (
     <div>
         <h2 className='text-3xl font-bold'>{product.name}</h2>
@@ -27,7 +29,7 @@ const Info = ({product}: Props) => {
                 <span title={product.color.name} style={{backgroundColor:product.color.value}} className='p-3 rounded-full border' />
             </div>
         </div>
-        <Button className='mt-6 flex items-center gap-x-2'>Add to cart<ShoppingBasket /> </Button>
+        <Button onClick={()=>addItem(product)} className='mt-6 flex items-center gap-x-2'>Add to cart<ShoppingBasket /> </Button>
 
     </div>
   )

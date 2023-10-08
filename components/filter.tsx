@@ -10,7 +10,8 @@ import { cn } from '@/lib/util'
 type Props = {
     keyValue:string,
     name:string,
-    data : Size[] | Color[]
+    data : Size[] | Color[],
+   
 }
 
 const Filter = ({keyValue,name,data}: Props) => {

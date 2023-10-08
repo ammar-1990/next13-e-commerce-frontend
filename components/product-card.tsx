@@ -9,6 +9,7 @@ import { useRouter } from "next/navigation";
 import { cn } from "@/lib/util";
 import { MouseEventHandler } from "react";
 import usePreviewModal from "@/hooks/use-preview-modal";
+import useCart from "@/hooks/use-cartl";
 
 type Props = {
   product: Product;
@@ -24,6 +25,12 @@ const onPreview:MouseEventHandler<HTMLButtonElement> =(event)=>{
 event.stopPropagation()
 onOpen(product)
 
+}
+
+const {addItem} = useCart()
+const onAddToCart : MouseEventHandler<HTMLButtonElement> = (event)=>{
+  event.stopPropagation()
+addItem(product)
 }
   return (
     <div className={cn("border bg-white p-3 rounded-xl flex flex-col gap-y-4 group cursor-pointer relative",related && 'w-[200px] flex-shrink-0')}
@@ -45,7 +52,7 @@ onOpen(product)
           />
           <IconButton
             className="border "
-            onClick={() => {}}
+            onClick={onAddToCart}
             icon={<ShoppingBasket size={related ? 15 :20} />}
           />
         </div>
