@@ -1,36 +1,46 @@
-' use client'
+'use client'
 
 import {
-    Sheet,
-    SheetContent,
-    SheetDescription,
-    SheetHeader,
-    SheetTitle,
-    SheetTrigger,
-  } from "@/components/ui/sheet"
-import { Category } from "@/type"
-  import { Menu} from 'lucide-react'
-import Link from "next/link"
+  Sheet,
+  SheetContent,
+  SheetDescription,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet";
+import { Category } from "@/type";
+import { Menu } from "lucide-react";
+import Link from "next/link";
 
-import React from 'react'
-import MainNav from "./main-nav"
+import React, {useState} from "react";
+import MainNav from "./main-nav";
 
 type Props = {
-    data:Category[]
-}
+  data: Category[];
+};
 
-const MySheet = ({data}: Props) => {
+const MySheet = ({ data }: Props) => {
+
+    const [isOpen, setIsOpen] = useState(false)
+    const onClose = ()=>{
+setIsOpen(false)
+    }
   return (
-    <Sheet>
-    <SheetTrigger className="lg:hidden "><Menu /></SheetTrigger>
-    <SheetContent className="lg:hidden flex flex-col gap-4">
-   
-    <Link className='text-3xl font-semibold' href={'/'}>Awesome</Link>
-      <MainNav sheet={true} data={data} />
-    </SheetContent>
-  </Sheet>
-  )
-}
+    <Sheet open={isOpen} onOpenChange={()=>setIsOpen(prev => prev===true ? false : true)}>
+      <SheetTrigger  className="lg:hidden ">
+        <Menu />
+      </SheetTrigger>
 
-export default MySheet
+      <SheetContent className="lg:hidden flex flex-col gap-4">
+        <SheetHeader>
+          <SheetTitle className="text-2xl font-semibold">Categories</SheetTitle>
+        </SheetHeader>
+        <SheetDescription>
+          <MainNav onClick={onClose} sheet={true} data={data} />
+        </SheetDescription>
+      </SheetContent>
+    </Sheet>
+  );
+};
 
+export default MySheet;

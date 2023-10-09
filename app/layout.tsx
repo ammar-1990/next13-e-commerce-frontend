@@ -7,6 +7,7 @@ import ModalsProvider from '@/providers/modals-provider'
 import ToastProvider from '@/providers/taost-provider'
 import { cn } from '@/lib/util'
 
+
 const font = Urbanist({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
@@ -22,11 +23,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={cn(font.className,'flex flex-col ')}>
+   
         <ToastProvider />
         <ModalsProvider />
         <Navbar />
         {children}
         <Footer />
+      
         </body>
     </html>
   )

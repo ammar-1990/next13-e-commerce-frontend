@@ -29,7 +29,7 @@ if(!mounted) return <Loader className=' ml-auto animate-spin' />
 
 
   return (
-    <div className='ml-auto'>
+    <div className=''>
         <Button onClick={()=>router.push('/cart')} className='px-4 py-2 flex items-center justify-center'>
             <ShoppingBag size={20} color='white'/>
             <span className='ml-2 text-sm text-white'>{items.length}</span>

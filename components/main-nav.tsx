@@ -7,10 +7,11 @@ import { usePathname } from "next/navigation";
 
 type Props = {
   data: Category[];
-  sheet?:boolean
+  sheet?:boolean,
+  onClick?:()=>void
 };
 
-const MainNav = ({ data,sheet }: Props) => {
+const MainNav = ({ data,sheet, onClick=()=>{} }: Props) => {
   const pathname = usePathname();
 
   const routes = data.map((item) => ({
@@ -22,6 +23,7 @@ const MainNav = ({ data,sheet }: Props) => {
     <div className={`flex    ${sheet ? 'flex-col gap-5' : 'flex-row space-x-6 lg:space-x-10 items-center ml-10'}`}>
       {routes.map((el) => (
         <Link
+        onClick={onClick}
           className={cn(
             "test-sm hover:text-black transition-colors font-medium",
             el.active ? "text-black" : "text-neutral-500"

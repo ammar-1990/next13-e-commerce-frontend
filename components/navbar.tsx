@@ -16,13 +16,18 @@ const Navbar =async (props: Props) => {
   const categories = await getCategories()
   return (
     <nav className='border-b h-16 flex-shrink-0 flex items-center  myPadding'>
+      <Link className='text-3xl font-semibold' href={'/'}>Awesome</Link>
+      <div className='flex items-center ml-auto gap-x-4 flex-1 lg:justify-between justify-end'>
+      <div className=' items-center hidden lg:flex'> 
+ 
+ <MainNav data={categories} />
+ </div>
       <MySheet data={categories} />
-<div className=' items-center hidden lg:flex'> 
- <Link className='text-3xl font-semibold' href={'/'}>Awesome</Link>
-      <MainNav data={categories} />
-      </div>
+
     
       <ActionsNavbar />
+      </div>
+     
     </nav>
   )
 }
