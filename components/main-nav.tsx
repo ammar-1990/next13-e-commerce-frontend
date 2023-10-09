@@ -7,9 +7,10 @@ import { usePathname } from "next/navigation";
 
 type Props = {
   data: Category[];
+  sheet?:boolean
 };
 
-const MainNav = ({ data }: Props) => {
+const MainNav = ({ data,sheet }: Props) => {
   const pathname = usePathname();
 
   const routes = data.map((item) => ({
@@ -18,7 +19,7 @@ const MainNav = ({ data }: Props) => {
     active: pathname === `/category/${item.id}`,
   }));
   return (
-    <div className="felx space-x-6 lg:space-x-10 items-center ml-10">
+    <div className={`flex    ${sheet ? 'flex-col gap-5' : 'flex-row space-x-6 lg:space-x-10 items-center ml-10'}`}>
       {routes.map((el) => (
         <Link
           className={cn(
