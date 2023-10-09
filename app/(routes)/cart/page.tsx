@@ -25,7 +25,7 @@ const CartPage = (props: Props) => {
 
 
   return (
-    <div className="myPadding flex-1">
+    <div className="myPadding flex-1 min-h-[700px]">
         <h2 className="font-medium text-3xl py-10">Shopping Cart</h2>
 
         <div className=" lg:grid lg:grid-cols-12 lg:items-start gap-x-12 ">
