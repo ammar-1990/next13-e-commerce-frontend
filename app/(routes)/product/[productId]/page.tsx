@@ -16,6 +16,7 @@ const product = await getProduct(params.productId)
 const relatedProducts = await getProducts({categoryId:product.category.id})
 const filteredRelatedProducts = relatedProducts.filter((product)=>product.id !==params.productId)
 
+
   return (
     <div className='space-y-6'>
         <div className='lg:grid lg:grid-cols-2 lg:gap-6 myPadding mt-5'>

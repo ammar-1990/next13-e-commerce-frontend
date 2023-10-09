@@ -3,10 +3,11 @@ import getProducts from '@/actions/get-products'
 import ProductList from '@/components/product-list'
 import Billboard from '@/components/billboard'
 import Image from 'next/image'
+import getBillboard from '@/actions/get-billboard'
 
 export default async function Home() {
 
-  const billboardPromise =  getBillboards('79e1370b-14d1-4096-9ed6-9e1085151e21')
+  const billboardPromise =  getBillboard()
   const productsPromise =  getProducts({isFeatured:true})
 
   const [billboard,products] = await Promise.all([billboardPromise,productsPromise])
