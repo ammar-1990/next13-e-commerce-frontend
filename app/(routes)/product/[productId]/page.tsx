@@ -21,7 +21,7 @@ const filteredRelatedProducts = relatedProducts.filter((product)=>product.id !==
 
   return (
     <div className='space-y-6'>
-        <div className='lg:grid lg:grid-cols-2 gap-6 myPadding mt-5'>
+        <div className='lg:grid lg:grid-cols-2 lg:gap-6 space-y-8 myPadding mt-5'>
             <Gallary images={product.images} />
             <Info product={product} />
         </div>
