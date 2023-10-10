@@ -24,7 +24,7 @@ const MainNav = ({ data,sheet, onClick=()=>{} }: Props) => {
     <div className={`flex    ${sheet ? 'flex-col gap-5' : 'flex-row space-x-6 lg:space-x-10 items-center ml-10'}`}>
       {routes.map((el) => (
         <button
-        onClick={()=>{onClick();route.push(el.href)}}
+        onClick={()=>{onClick();route.push(el.href);route.refresh()}}
           className={cn(
             "test-sm hover:text-black transition-colors font-medium",
             el.active ? "text-black" : "text-neutral-500"
