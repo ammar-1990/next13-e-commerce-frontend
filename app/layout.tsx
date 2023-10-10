@@ -14,7 +14,9 @@ export const metadata: Metadata = {
   title: 'Store',
   description: 'Awesome store',
 }
-export const revalidate = 0
+export const fetchCache = 'force-no-store'
+export const revalidate = 0 // seconds
+export const dynamic = 'force-dynamic'
 export default function RootLayout({
   children,
 }: {

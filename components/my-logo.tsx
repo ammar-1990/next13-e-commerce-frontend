@@ -9,7 +9,7 @@ const MyLogo = (props: Props) => {
 
     const route = useRouter()
   return (
-    <button className='text-3xl font-semibold'onClick={()=>route.push('/')}>Awesome</button>
+    <button className='text-3xl font-semibold'onClick={()=>{route.push('/');route.refresh()}}>Awesome</button>
   )
 }
 

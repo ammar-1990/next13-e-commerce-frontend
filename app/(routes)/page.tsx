@@ -5,6 +5,11 @@ import Billboard from '@/components/billboard'
 import Image from 'next/image'
 import getBillboard from '@/actions/get-billboard'
 
+
+export const fetchCache = 'force-no-store'
+export const revalidate = 0 // seconds
+export const dynamic = 'force-dynamic'
+
 export default async function Home() {
 
   const billboardPromise =  getBillboard()

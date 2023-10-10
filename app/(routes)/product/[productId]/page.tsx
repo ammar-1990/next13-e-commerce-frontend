@@ -9,7 +9,9 @@ type Props = {
     params:{productId:string}
 }
 
-export const revalidate = 0
+export const fetchCache = 'force-no-store'
+export const revalidate = 0 // seconds
+export const dynamic = 'force-dynamic'
 
 const page
  = async({params}: Props) => {
