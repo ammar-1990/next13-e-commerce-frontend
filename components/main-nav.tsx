@@ -3,7 +3,7 @@
 import { cn } from "@/lib/util";
 import { Category } from "@/type";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 
 type Props = {
   data: Category[];
@@ -13,6 +13,7 @@ type Props = {
 
 const MainNav = ({ data,sheet, onClick=()=>{} }: Props) => {
   const pathname = usePathname();
+  const route = useRouter()
 
   const routes = data.map((item) => ({
     href: `/category/${item.id}`,
@@ -22,17 +23,17 @@ const MainNav = ({ data,sheet, onClick=()=>{} }: Props) => {
   return (
     <div className={`flex    ${sheet ? 'flex-col gap-5' : 'flex-row space-x-6 lg:space-x-10 items-center ml-10'}`}>
       {routes.map((el) => (
-        <Link
-        onClick={onClick}
+        <button
+        onClick={()=>{onClick();route.push(el.href)}}
           className={cn(
             "test-sm hover:text-black transition-colors font-medium",
             el.active ? "text-black" : "text-neutral-500"
           )}
           key={el.name}
-          href={el.href}
+         
         >
           {el.name}
-        </Link>
+        </button>
       ))}
     </div>
   );
