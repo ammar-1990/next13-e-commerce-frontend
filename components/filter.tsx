@@ -38,6 +38,7 @@ const URL = qs.stringifyUrl({
 },{skipNull:true})
 
 router.push(URL)
+router.refresh()
 
 }
 
