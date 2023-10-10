@@ -14,7 +14,7 @@ type Props = {
 const Modal = ({onClose,open,children}: Props) => {
   return (
  <Transition as={Fragment} appear show={open}>
- <Dialog as='div'className={'relative z-10'}  onClose={onClose}>
+ <Dialog as='div'className={'relative z-50'}  onClose={onClose}>
      
        <div className='fixed inset-0 bg-black/50' />
        <div className='inset-0 fixed overflow-y-auto'>
@@ -28,7 +28,7 @@ const Modal = ({onClose,open,children}: Props) => {
         leaveTo="opacity-0 scale-95"
       >
     <Dialog.Panel className={'max-w-3xl w-full overflow-hidden rounded-lg text-left align-middle'}>
-                  <div className='flex relative items-center shadow-2xl w-full overflow-hidden bg-white px-4 pb-8 pt-14 '>
+                  <div className='flex relative items-center shadow-2xl w-full overflow-hidden bg-white px-4 pb-8 pt-14 z-50 '>
                     <div className='absolute top-4 right-4'>
                       <IconButton onClick={onClose} icon={<XIcon size={15} />} />
 
