@@ -91,3 +91,16 @@ body::-webkit-scrollbar{
 .myScroll::-webkit-scrollbar-thumb{
   @apply bg-black
 }
+
+
+
+.mySecondScroll::-webkit-scrollbar {
+  @apply w-1  
+  }
+  
+  .mySecondScroll::-webkit-scrollbar-thumb{
+    @apply bg-black rounded-lg
+  }
+  .mySecondScroll::-webkit-scrollbar-track{
+    @apply bg-neutral-300 rounded-lg
+  }
