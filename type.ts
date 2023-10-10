@@ -20,6 +20,7 @@ export interface Product {
     category:Category,
     isFeatured:boolean,
     price:string,
+    describtion:string,
     size:Size,
     color:Color,
     images:Image[]
