@@ -14,13 +14,25 @@ type Props = {
   searchParams: { sizeId: string; colorId: string };
 };
 
+
+export async function generateMetadata({ params, searchParams }:Props) {
+  const category = await getCategory(params.categoryId);
+  return { title: category.name };
+}
+
 const page = async ({ params, searchParams }: Props) => {
+
+  
+
   const category = await getCategory(params.categoryId);
   const filteredProducts = await getProducts({
     categoryId: params.categoryId,
     sizeId: searchParams.sizeId,
     colorId: searchParams.colorId,
   });
+
+
+ 
 
   const sizes = await getSizes();
   const colors = await getColors();

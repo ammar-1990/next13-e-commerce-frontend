@@ -11,7 +11,7 @@ import { cn } from '@/lib/util'
 const font = Urbanist({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Store',
+  title: 'Awesome store',
   description: 'Awesome store',
 }
 export const fetchCache = 'force-no-store'

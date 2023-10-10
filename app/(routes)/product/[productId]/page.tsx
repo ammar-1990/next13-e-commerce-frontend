@@ -13,6 +13,14 @@ export const fetchCache = 'force-no-store'
 export const revalidate = 0 // seconds
 export const dynamic = 'force-dynamic'
 
+export async function generateMetadata({ params }:Props) {
+  const product = await getProduct(params.productId)
+  return { title: product.name,
+    description:product.describtion.slice(0,70) };
+}
+
+
+
 const page
  = async({params}: Props) => {
 
