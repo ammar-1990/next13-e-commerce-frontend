@@ -30,7 +30,11 @@ const Info = ({product}: Props) => {
                 <p className='font-semibold'>Color: </p>
                 <span title={product.color.name} style={{backgroundColor:product.color.value}} className='p-3 rounded-full border' />
             </div>
+            <div>
+                <h2 className='text-lg font-semibold'>Describtion</h2>
             <p className='text-sm text-gray-600'>{product.describtion}</p>
+            </div>
+          
         </div>
         <Button onClick={()=>addItem(product)} className='mt-6 flex items-center gap-x-2'>Add to cart<ShoppingBasket /> </Button>
 
