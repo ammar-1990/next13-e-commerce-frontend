@@ -20,7 +20,7 @@ const PreviewModal = (props: Props) => {
   >
 
 
-    <div className='lg:grid lg:grid-cols-2 lg:gap-6 myPadding mt-5 items-start '>
+    <div className='lg:grid lg:grid-cols-2 space-y-8 lg:gap-6 myPadding mt-5 items-start '>
             <Gallary images={product.images} />
             <Info product={product} />
         </div>
