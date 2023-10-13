@@ -24,7 +24,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={cn(font.className,'flex flex-col h-screen overflow-y-auto')}>
+      <body className={cn(font.className,'flex flex-col min-h-screen overflow-y-auto')}>
    
         <ToastProvider />
         <ModalsProvider />
