@@ -51,7 +51,7 @@ const page = async ({ params, searchParams }: Props) => {
         </div>
         <div className="lg:col-span-4">
           {!filteredProducts.length && <NoResults />}
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
             {filteredProducts.map((product) => (
               <ProductCard key={product.id} product={product} />
             ))}

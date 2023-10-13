@@ -48,7 +48,7 @@ return ()=>window.removeEventListener('scroll',handleScroll)
 
 
   return (
-    <nav className={cn('fixed top-0 w-full z-50 bg-white/70 border-b backdrop-blur-md h-16 flex-shrink-0 flex items-center transition   myPadding',hide && '-translate-y-[100%] delay-1000')}>
+    <nav className={cn('fixed top-0 w-full z-50 bg-white/70 hover:bg-white  border-b backdrop-blur-md h-16 flex-shrink-0 flex items-center transition   myPadding',hide && '-translate-y-[100%] delay-1000')}>
      <MyLogo />
       <div className='flex items-center ml-auto gap-x-4 flex-1 lg:justify-between justify-end'>
       <div className=' items-center hidden lg:flex'> 
