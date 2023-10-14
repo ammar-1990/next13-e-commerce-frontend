@@ -16,7 +16,7 @@ const ProductList = async({ categoryId,title }: Props) => {
     <h2 className="font-bold text-3xl">{title}</h2>
     {!products.length && <NoResults />}
 
-    <div className="flex items-center gap-x-3 overflow-x-auto  max-w-[1400px] mx-auto w-full mySecondScroll pb-5">
+    <div className="flex items-center gap-x-3 overflow-x-auto  max-w-[1400px] mx-auto w-full mySecondScroll pb-5 snap-x snap-mandatory">
       {products.map((product)=><ProductCard key={product.id} product={product} />)}
 
     </div>
