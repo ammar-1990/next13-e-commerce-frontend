@@ -44,7 +44,7 @@ addItem(product)
           src={product.images[0].url}
           alt="product-image"
         />
-        <div className={cn("flex items-center justify-center gap-x-8 md:gap-x-14 absolute w-full z-20 bottom-0 sm:bottom-16 group-hover:-translate-y-2 sm:group-hover:-translate-y-8 duration-300   opacity-0 group-hover:opacity-100 transition pointer-events-none group-hover:pointer-events-auto",related && 'bottom-5 group-hover:-translate-y-8')}>
+        <div className={cn("flex items-center justify-center gap-x-8 md:gap-x-14 absolute w-full z-20 bottom-0 sm:bottom-16 group-hover:-translate-y-2 sm:group-hover:-translate-y-8 duration-300   opacity-0 group-hover:opacity-100 transition pointer-events-none group-hover:pointer-events-auto",related && 'sm:bottom-0 group-hover:-translate-y-8')}>
           <IconButton
             className="border  "
             onClick={onPreview}
