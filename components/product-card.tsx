@@ -14,7 +14,7 @@ import useCart from "@/hooks/use-cartl";
 type Props = {
   product: Product;
   related?:boolean;
-  filters:boolean
+  filters?:boolean
 };
 
 const ProductCard = ({ product,related,filters }: Props) => {
