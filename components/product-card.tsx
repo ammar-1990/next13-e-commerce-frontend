@@ -44,22 +44,22 @@ addItem(product)
           src={product.images[0].url}
           alt="product-image"
         />
-        <div className={cn("flex items-center justify-center gap-x-5 absolute w-full z-20 bottom-12 group-hover:-translate-y-8 duration-300   opacity-0 group-hover:opacity-100 transition pointer-events-none group-hover:pointer-events-auto",related && 'bottom-5 group-hover:-translate-y-8')}>
+        <div className={cn("flex items-center justify-center gap-x-8 md:gap-x-14 absolute w-full z-20 bottom-0 sm:bottom-16 group-hover:-translate-y-2 sm:group-hover:-translate-y-8 duration-300   opacity-0 group-hover:opacity-100 transition pointer-events-none group-hover:pointer-events-auto",related && 'bottom-5 group-hover:-translate-y-8')}>
           <IconButton
-            className="border "
+            className="border  "
             onClick={onPreview}
-            icon={<ExpandIcon size={related ? 15 :20} />}
+            icon={<ExpandIcon size={15} />}
           />
           <IconButton
-            className="border "
+            className="border  "
             onClick={onAddToCart}
-            icon={<ShoppingBasket size={related ? 15 :20} />}
+            icon={<ShoppingBasket size={15}  />}
           />
         </div>
       </div>
       {/* description */}
       <div>
-        <p className="font-semibold text-lg">{product.name}</p>
+        <p className="font-semibold text-xs sm:text-lg">{product.name}</p>
         <p className="text-sm text-gray-500">{product.category.name}</p>
       </div>
       <div>
