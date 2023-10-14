@@ -2,17 +2,21 @@ import { Product } from "@/type";
 import React from "react";
 import NoResults from "./no-results";
 import ProductCard from "./product-card";
+import getProducts from "@/actions/get-products";
 
-type Props = { products: Product[]; title: string };
+type Props = { categoryId: string; title: string };
 
-const ProductList = ({ products,title }: Props) => {
+const ProductList = async({ categoryId,title }: Props) => {
+
+
+  const products = await getProducts({categoryId})
   
   return <div className="space-y-4" >
     
     <h2 className="font-bold text-3xl">{title}</h2>
     {!products.length && <NoResults />}
 
-    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+    <div className="flex items-center gap-x-3 overflow-x-auto  max-w-[1400px] mx-auto w-full mySecondScroll pb-5">
       {products.map((product)=><ProductCard key={product.id} product={product} />)}
 
     </div>

@@ -13,10 +13,11 @@ import useCart from "@/hooks/use-cartl";
 
 type Props = {
   product: Product;
-  related?:boolean
+  related?:boolean;
+  filters:boolean
 };
 
-const ProductCard = ({ product,related }: Props) => {
+const ProductCard = ({ product,related,filters }: Props) => {
 
 const router = useRouter()
 const {onOpen} = usePreviewModal()
@@ -33,7 +34,7 @@ const onAddToCart : MouseEventHandler<HTMLButtonElement> = (event)=>{
 addItem(product)
 }
   return (
-    <div className={cn("border bg-white p-3 rounded-xl flex flex-col gap-y-4 group cursor-pointer relative",related && 'w-[200px] flex-shrink-0')}
+    <div className={cn("border bg-white p-3 rounded-xl flex flex-col gap-y-4 group cursor-pointer relative w-[200px] md:w-[300px] flex-shrink-0 justify-self-center",filters && 'w-full md:w-full')}
     onClick={()=>router.push(`/product/${product.id}`)}
     >
         <div className="bg-black/0 group-hover:bg-black/40 transition rounded-xl w-full h-full absolute inset-0 z-10"  />

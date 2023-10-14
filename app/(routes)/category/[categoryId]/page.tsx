@@ -53,7 +53,7 @@ const page = async ({ params, searchParams }: Props) => {
           {!filteredProducts.length && <NoResults />}
           <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
             {filteredProducts.map((product) => (
-              <ProductCard key={product.id} product={product} />
+              <ProductCard key={product.id} product={product} filters={true}/>
             ))}
           </div>
         </div>
