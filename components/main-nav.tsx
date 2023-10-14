@@ -21,12 +21,12 @@ const MainNav = ({ data,sheet, onClick=()=>{} }: Props) => {
     active: pathname === `/category/${item.id}`,
   }));
   return (
-    <div className={`flex    ${sheet ? 'flex-col gap-5' : 'flex-row  items-center ml-10 h-full'}`}>
+    <div className={`flex  max-w-[1200px] w-full overflow-x-auto overflow-y-hidden myScroll ${sheet ? 'flex-col gap-5' : 'flex-row  items-center ml-10 h-full'}`}>
       {routes.map((el) => (
         <button
         onClick={()=>{onClick();route.push(el.href);route.refresh()}}
           className={cn(
-            "test-sm hover:text-black transition-colors font-medium h-full relative px-7 py-3 ",
+            "test-sm hover:text-black transition-colors font-medium h-full relative px-7 py-3 flex-shrink-0",
             el.active ? "text-black after:-bottom-[1px] after:absolute after:left-0  after:w-full after:h-[2px] after:bg-black" : "text-neutral-500 "
           )}
           key={el.name}
