@@ -104,3 +104,11 @@ body::-webkit-scrollbar{
   .mySecondScroll::-webkit-scrollbar-track{
     @apply bg-neutral-300 rounded-lg
   }
+
+
+  @media (max-width: 500px) {
+    .mySecondScroll::-webkit-scrollbar{
+      display: none;
+    }
+
+  }
