@@ -15,7 +15,7 @@ const RelatedProducts = ({products,title}: Props) => {
         <h2 className='font-bold text-3xl'>{title}</h2>
         {!products.length && <NoResults />}
 
-<div className=' flex items-center gap-x-3 w-full overflow-x-auto myScroll'>
+<div className=' flex items-center gap-x-3 w-full overflow-x-auto mySecondScroll'>
 {products.map((product)=>
 
 <ProductCard
