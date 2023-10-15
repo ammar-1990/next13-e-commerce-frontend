@@ -27,7 +27,7 @@ const MainNav = ({ data,sheet, onClick=()=>{} }: Props) => {
         onClick={()=>{onClick();route.push(el.href);route.refresh()}}
           className={cn(
             "test-sm hover:text-black transition-colors font-medium h-full relative px-7 py-3 flex-shrink-0",
-            el.active ? "text-black after:-bottom-[1px] after:absolute after:left-0  after:w-full after:h-[2px] after:bg-black" : "text-neutral-500 "
+            el.active ? "text-black border-b-2 border-black " : "text-neutral-500 "
           )}
           key={el.name}
          

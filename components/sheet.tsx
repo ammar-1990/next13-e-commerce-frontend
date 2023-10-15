@@ -28,7 +28,7 @@ setIsOpen(false)
   return (
     <Sheet open={isOpen} onOpenChange={()=>setIsOpen(prev => prev===true ? false : true)}>
       <SheetTrigger  className="lg:hidden ">
-        <Menu />
+        <Menu className=""  />
       </SheetTrigger>
 
       <SheetContent className="lg:hidden flex flex-col gap-4">

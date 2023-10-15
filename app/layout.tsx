@@ -29,7 +29,7 @@ export default function RootLayout({
         <ToastProvider />
         <ModalsProvider />
         <Navbar />
-        <div className='py-8' />
+        <div className='h-24 md:h-28' />
         {children}
         <Footer />
       
