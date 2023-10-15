@@ -95,14 +95,14 @@ body::-webkit-scrollbar{
 
 
 .mySecondScroll::-webkit-scrollbar {
-  @apply w-1  h-1
+  @apply w-1  h-1  transition
   }
   
   .mySecondScroll::-webkit-scrollbar-thumb{
-    @apply bg-black rounded-lg
+    @apply bg-black/0 rounded-lg  transition duration-500
   }
   .mySecondScroll::-webkit-scrollbar-track{
-    @apply bg-neutral-300 rounded-lg
+    @apply bg-neutral-300/0 rounded-lg  transition duration-500
   }
 
 
@@ -119,3 +119,11 @@ body::-webkit-scrollbar{
       display: none;
     }
   }
+
+
+  .mySecondScroll:hover::-webkit-scrollbar-thumb{
+    @apply bg-black/100 rounded-lg  transition duration-500
+  }
+  .mySecondScroll:hover::-webkit-scrollbar-track{
+    @apply bg-neutral-300/100 rounded-lg transition duration-500
+  } 

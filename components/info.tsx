@@ -32,7 +32,7 @@ const Info = ({product}: Props) => {
             </div>
             <div>
                 <h2 className='text-lg font-semibold'>Describtion</h2>
-            <p className='text-sm text-gray-600 max-h-[300px] overflow-y-auto mySecondScroll pr-2 text-justify'>{product.describtion}</p>
+            <p className='text-sm text-gray-600 max-h-[300px] overflow-y-auto  mySecondScroll pr-2 text-justify'>{product.describtion}</p>
             </div>
           
         </div>
