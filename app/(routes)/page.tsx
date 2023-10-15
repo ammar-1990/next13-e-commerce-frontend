@@ -26,7 +26,7 @@ export default async function Home() {
 
       <h2 className='py-6 pb-12 mx-auto w-fit font-bold text-3xl'>Featured products</h2>
      
-      <div className='flex flex-col gap-y-8 pb-3 myPadding'> 
+      <div className='flex flex-col gap-y-8 pb-3 myPadding mt-8'> 
       {categories.map((caltegory)=><ProductList key={caltegory.id} categoryId={caltegory.id} title={caltegory.name} />)}
 
       

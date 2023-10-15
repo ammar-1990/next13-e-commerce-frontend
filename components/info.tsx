@@ -22,11 +22,11 @@ const Info = ({product}: Props) => {
         <hr className='my-6' />
         <div className='flex flex-col gap-y-4'>
 
-            <div className='flex gap-x-2'>
+            <div className='flex gap-x-2 items-center'>
                 <p className='font-semibold'>Size: </p>
                 <p>{product.size.name}</p>
             </div>
-            <div className='flex gap-x-2'>
+            <div className='flex gap-x-2 items-center'>
                 <p className='font-semibold'>Color: </p>
                 <span title={product.color.name} style={{backgroundColor:product.color.value}} className='p-3 rounded-full border' />
             </div>
