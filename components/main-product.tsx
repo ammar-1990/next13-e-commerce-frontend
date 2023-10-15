@@ -30,7 +30,7 @@ addItem(product)
 const router = useRouter()
   return (
     <div
-    className=" items-start justify-between hidden md:flex border p-3 rounded-xl cursor-pointer group relative gap-x-8"
+    className=" items-start justify-between  flex border p-3 rounded-xl cursor-pointer group relative gap-x-8"
     onClick={()=>router.push(`/product/${product.id}`)}
     >
              <div className="bg-black/0 group-hover:bg-black/40 transition rounded-xl w-full h-full absolute inset-0 z-10"  />
@@ -44,19 +44,19 @@ const router = useRouter()
 
         </div>
 
-        <div className="w-1/3 flex flex-col gap-y-2 mt-8 items-center">
-            <h2 className="font-bold text-3xl">Description</h2>
-            <p className="text-lg text-gray-600 line-clamp-5 text-justify">{product.describtion}</p>
+        <div className="w-1/3 flex flex-col gap-y-2 md:mt-8 items-center">
+            <h2 className="font-bold text-sm md:text-3xl">Description</h2>
+            <p className="md:text-lg text-[12px] text-gray-600 line-clamp-5 text-justify">{product.describtion}</p>
         </div>
 
-        <div className="flex flex-col gap-y-4 w-1/3 items-center mt-8">
+        <div className="flex flex-col gap-y-1 md:gap-y-4 w-1/3 items-center md:mt-8">
         <div className='flex gap-x-2 items-center'>
-                <p className='font-semibold text-lg '>Size: </p>
-                <p>{product.size.name}</p>
+                <p className='font-semibold text-sm md:text-lg '>Size: </p>
+                <p className="text-xs md:text-base">{product.size.name}</p>
             </div>
             <div className='flex gap-x-2 items-center'>
-                <p className='font-semibold text-lg '>Color: </p>
-                <span title={product.color.name} style={{backgroundColor:product.color.value}} className='p-3 rounded-full border' />
+                <p className='font-semibold text-sm md:text-lg '>Color: </p>
+                <span title={product.color.name} style={{backgroundColor:product.color.value}} className=' p-1 md:p-3 rounded-full border' />
             </div>
 
         </div>

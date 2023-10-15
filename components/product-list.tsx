@@ -12,7 +12,7 @@ const ProductList = async({ categoryId,title }: Props) => {
 
   const products = await getProducts({categoryId})
   
-  return <div className="space-y-4 mt-8" >
+  return <div className="space-y-4 mb-16" >
     
     <h2 className="font-bold text-3xl">{title}</h2>
     {!products.length && <NoResults />}
