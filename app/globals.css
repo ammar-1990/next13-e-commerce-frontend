@@ -112,3 +112,10 @@ body::-webkit-scrollbar{
     }
 
   }
+
+  @media(max-width: 300px){
+
+    .toHide{
+      display: none;
+    }
+  }

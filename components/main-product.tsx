@@ -30,7 +30,7 @@ addItem(product)
 const router = useRouter()
   return (
     <div
-    className=" items-start justify-between  flex border p-3 rounded-xl cursor-pointer group relative md:gap-x-8 "
+    className=" items-start justify-between  flex border p-3 rounded-xl cursor-pointer group relative md:gap-x-8 toHide"
     onClick={()=>router.push(`/product/${product.id}`)}
     >
              <div className="bg-black/0 group-hover:bg-black/40 transition rounded-xl w-full h-full absolute inset-0 z-10"  />
@@ -44,7 +44,7 @@ const router = useRouter()
 
         </div>
 
-        <div className="w-1/3 flex flex-col gap-y-2 md:mt-8 items-center">
+        <div className="w-1/3 flex flex-col gap-y-2 md:mt-8 ">
             <h2 className="font-bold text-sm md:text-3xl">Description</h2>
             <p className="md:text-lg text-[10px] text-gray-600 line-clamp-4 md:line-clamp-[6] sm:text-justify">{product.describtion}</p>
         </div>
