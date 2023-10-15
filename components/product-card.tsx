@@ -15,7 +15,7 @@ type Props = {
   product: Product;
   related?:boolean;
   filters?:boolean,
-  count: number
+  count?: number
 };
 
 const ProductCard = ({ product,related,filters,count }: Props) => {
