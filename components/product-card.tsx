@@ -7,7 +7,7 @@ import { ExpandIcon, ShoppingBasket } from "lucide-react";
 import Currency from "./currency-product";
 import { useRouter } from "next/navigation";
 import { cn } from "@/lib/util";
-import { MouseEventHandler } from "react";
+import { MouseEventHandler, useEffect, useState } from "react";
 import usePreviewModal from "@/hooks/use-preview-modal";
 import useCart from "@/hooks/use-cartl";
 
@@ -32,6 +32,16 @@ const ProductCard = ({ product, related, filters, count }: Props) => {
     event.stopPropagation();
     addItem(product);
   };
+
+
+
+  const [myWidth, setMyWidth] = useState(0)
+
+  useEffect(()=>{
+
+    setMyWidth(window.innerWidth)
+    console.log(myWidth)
+  },[myWidth])
   return (
     <div
       className={cn(
@@ -56,14 +66,14 @@ const ProductCard = ({ product, related, filters, count }: Props) => {
           )}
         >
           <IconButton
-            className="border  "
+            className="border p-1 sm:p-4 md:p-5  "
             onClick={onPreview}
-            icon={<ExpandIcon size={15} />}
+            icon={<ExpandIcon size={myWidth > 400 ?15 : 10} />}
           />
           <IconButton
-            className="border  "
+            className="border p-1 sm:p-4 md:p-5  "
             onClick={onAddToCart}
-            icon={<ShoppingBasket size={15} />}
+            icon={<ShoppingBasket size={myWidth > 400 ?15 : 10} />}
           />
         </div>
       </div>

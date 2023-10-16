@@ -10,7 +10,7 @@ type Props = {
 
 const IconButton = ({className,onClick,icon}: Props) => {
   return (
-    <button onClick={onClick} className={cn("flex items-center justify-center p-3 rounded-full bg-white text-black hover:scale-110 transition",className)}>
+    <button onClick={onClick} className={cn("flex items-center justify-center  rounded-full bg-white text-black hover:scale-110 transition",className)}>
         {icon}
     </button>
   )
