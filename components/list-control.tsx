@@ -14,7 +14,7 @@ const listRef = useRef<HTMLDivElement>(null)
 
 
   return (
-    <div  ref={listRef} className="flex items-center gap-x-3 overflow-x-auto  w-full mySecondScroll control  pb-5 group-hover:bg-red-400 snap-x snap-mandatory">
+    <div  ref={listRef} className="flex items-stretch gap-x-3 overflow-x-auto  w-full mySecondScroll control  pb-5 group-hover:bg-red-400 snap-x snap-mandatory">
         
     {products.map((product,i)=><ProductCard count={i} key={product.id} product={product} />)}
 

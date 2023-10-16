@@ -13,32 +13,35 @@ import useCart from "@/hooks/use-cartl";
 
 type Props = {
   product: Product;
-  related?:boolean;
-  filters?:boolean,
-  count?: number
+  related?: boolean;
+  filters?: boolean;
+  count?: number;
 };
 
-const ProductCard = ({ product,related,filters,count }: Props) => {
+const ProductCard = ({ product, related, filters, count }: Props) => {
+  const router = useRouter();
+  const { onOpen } = usePreviewModal();
 
-const router = useRouter()
-const {onOpen} = usePreviewModal()
+  const onPreview: MouseEventHandler<HTMLButtonElement> = (event) => {
+    event.stopPropagation();
+    onOpen(product);
+  };
 
-const onPreview:MouseEventHandler<HTMLButtonElement> =(event)=>{
-event.stopPropagation()
-onOpen(product)
-
-}
-
-const {addItem} = useCart()
-const onAddToCart : MouseEventHandler<HTMLButtonElement> = (event)=>{
-  event.stopPropagation()
-addItem(product)
-}
+  const { addItem } = useCart();
+  const onAddToCart: MouseEventHandler<HTMLButtonElement> = (event) => {
+    event.stopPropagation();
+    addItem(product);
+  };
   return (
-    <div className={cn("border snap-start snap-always bg-white p-3 rounded-xl flex flex-col gap-y-4 group cursor-pointer relative w-[200px] md:w-[300px] flex-shrink-0 justify-self-center",filters && 'w-full md:w-full',count===0 && 'hidden')}
-    onClick={()=>router.push(`/product/${product.id}`)}
+    <div
+      className={cn(
+        "border snap-start snap-always bg-white p-3 rounded-xl flex flex-col justify-between group cursor-pointer relative w-[100px] sm:w-[200px] md:w-[300px] flex-shrink-0 justify-self-center",
+        filters && "w-full md:w-full",
+        count === 0 && "hidden"
+      )}
+      onClick={() => router.push(`/product/${product.id}`)}
     >
-        <div className="bg-black/0 group-hover:bg-black/40 transition rounded-xl w-full h-full absolute inset-0 z-10"  />
+      <div className="bg-black/0 group-hover:bg-black/40 transition rounded-xl w-full h-full absolute inset-0 z-10" />
       <div className="relative aspect-square  ">
         <Image
           className="object-contain rounded-md"
@@ -46,7 +49,12 @@ addItem(product)
           src={product.images[0].url}
           alt="product-image"
         />
-        <div className={cn("flex items-center justify-center gap-x-8 md:gap-x-14 absolute w-full z-20 bottom-0 sm:bottom-16 group-hover:-translate-y-2 sm:group-hover:-translate-y-8 duration-300   opacity-0 group-hover:opacity-100 transition pointer-events-none group-hover:pointer-events-auto",related && 'sm:bottom-0 group-hover:-translate-y-8')}>
+        <div
+          className={cn(
+            "flex items-center justify-center  gap-x-8 md:gap-x-14 absolute w-full z-20 bottom-0 sm:bottom-16 group-hover:-translate-y-2 sm:group-hover:-translate-y-8 duration-300   opacity-0 group-hover:opacity-100 transition pointer-events-none group-hover:pointer-events-auto",
+            related && "sm:bottom-0 group-hover:-translate-y-8"
+          )}
+        >
           <IconButton
             className="border  "
             onClick={onPreview}
@@ -55,14 +63,14 @@ addItem(product)
           <IconButton
             className="border  "
             onClick={onAddToCart}
-            icon={<ShoppingBasket size={15}  />}
+            icon={<ShoppingBasket size={15} />}
           />
         </div>
       </div>
       {/* description */}
-      <div>
-        <p className="font-semibold text-xs sm:text-lg">{product.name}</p>
-        <p className="text-sm text-gray-500">{product.category.name}</p>
+      <div className=" ">
+        <p className="font-semibold text-xs w-full line-clamp-1 text-clip sm:text-lg ">{product.name}</p>
+        <p className="text-sm text-gray-500 ">{product.category.name}</p>
       </div>
       <div>
         <Currency value={product.price} />
